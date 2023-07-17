@@ -7,7 +7,7 @@ public class PostDTO {
     private String content;
     private String title;
 
-    private long username;
+    private String username;
 
 
     public long getId() {
@@ -35,22 +35,22 @@ public class PostDTO {
         this.title = title;
     }
 
-    public long getUsername() {
+    public String getUsername() {
         return username;
     }
 
-    public void setUsername(long username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 
-    public PostDTO(long id, String content, String title, long username) {
+    public PostDTO(long id,  String title, String content,String username) {
         this.id = id;
         this.content = content;
         this.title = title;
         this.username = username;
     }
 
-    public PostDTO(String content, String title, long username) {
+    public PostDTO( String title,String content, String username) {
         this.content = content;
         this.title = title;
         this.username = username;

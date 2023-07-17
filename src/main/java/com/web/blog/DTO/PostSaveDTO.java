@@ -6,13 +6,13 @@ public class PostSaveDTO {
     private long id;
     private String content;
     private String title;
-    private long username;
+    private String username;
 
     public long getId() {
         return id;
     }
 
-    public PostSaveDTO(String content, String title, long username) {
+    public PostSaveDTO( String title, String content,String username) {
         this.content = content;
         this.title = title;
         this.username = username;
@@ -41,15 +41,15 @@ public class PostSaveDTO {
         this.title = title;
     }
 
-    public long getUsername() {
+    public String getUsername() {
         return username;
     }
 
-    public void setUsername(long username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 
-    public PostSaveDTO(long id, String title, String content, long username) {
+    public PostSaveDTO(long id, String title, String content, String username) {
         this.id = id;
         this.content = content;
         this.title = title;

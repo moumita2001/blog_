@@ -42,13 +42,13 @@ public class UserServiceIMPL implements UserService {
     @Override
     public LoginResponse loginUser(LoginDTO loginDTO) {
         String msg = "";
-        User user1 = userRepo.findByEmail(loginDTO.getEmail());
+        User user1 = userRepo.findByUsername(loginDTO.getUsername());
         if (user1 != null) {
             String password = loginDTO.getPassword();
             String encodedPassword = user1.getPassword();
             Boolean isPwdRight = passwordEncoder.matches(password, encodedPassword);
             if (isPwdRight) {
-                Optional<User> employee = userRepo.findOneByEmailAndPassword(loginDTO.getEmail(), encodedPassword);
+                Optional<User> employee = userRepo.findOneByUsernameAndPassword(loginDTO.getUsername(), encodedPassword);
                 if (employee.isPresent()) {
                     return new LoginResponse("Login Success", true);
                 } else {
@@ -58,7 +58,7 @@ public class UserServiceIMPL implements UserService {
                 return new LoginResponse("password Not Match", false);
             }
         }else {
-            return new LoginResponse("Email not exits", false);
+            return new LoginResponse("username not exits", false);
         }
     }
 }

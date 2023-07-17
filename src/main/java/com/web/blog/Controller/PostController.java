@@ -32,8 +32,8 @@ public class PostController {
 //        return postService.addPost(postSaveDTO);
 //    }
     @PostMapping(path = "/save")
-    public long savePost(@RequestBody PostSaveDTO postSaveDTO){
-        long Id= postService.addPost(postSaveDTO);
+    public String savePost(@RequestBody PostSaveDTO postSaveDTO){
+        String Id= postService.addPost(postSaveDTO);
         return  Id;
     }
 

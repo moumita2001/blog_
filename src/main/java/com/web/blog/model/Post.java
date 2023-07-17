@@ -16,7 +16,7 @@ public class Post {
     private String content;
 
     @Column(name = "user_id")
-    private long username;
+    private String username;
 
 
     public long getId() {
@@ -43,27 +43,37 @@ public class Post {
         this.content = content;
     }
 
-    public long getUsername() {
+    public String getUsername() {
         return username;
     }
 
-    public void setUsername(long username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 
     public Post() {
     }
 
-    public Post(long id, String title, String content, long username) {
+    public Post(long id, String title, String content, String username) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.username = username;
     }
 
-    public Post(String title, String content, long username) {
+    public Post(String title, String content, String username) {
         this.title = title;
         this.content = content;
         this.username = username;
+    }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", username='" + username + '\'' +
+                '}';
     }
 }

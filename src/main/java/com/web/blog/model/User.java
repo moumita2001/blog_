@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -21,6 +22,9 @@ public class User {
     @NotBlank
     @Column(name="email")
     private String email;
+
+//    @OneToMany
+//    private List<Post> postList=new ArrayList<>();
 
 
     public Long getId() {

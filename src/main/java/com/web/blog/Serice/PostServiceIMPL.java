@@ -25,8 +25,7 @@ public class PostServiceIMPL implements PostService {
     private PostRepo postRepo;
 
     @Override
-
-    public long addPost(PostSaveDTO postSaveDTO) {
+    public String addPost(PostSaveDTO postSaveDTO) {
         Post post = new Post(
                 postSaveDTO.getId(),
                 postSaveDTO.getTitle(),
