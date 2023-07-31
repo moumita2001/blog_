@@ -7,7 +7,7 @@ import com.web.blog.model.Post;
 import java.util.List;
 
 public interface PostService {
-    String addPost(PostSaveDTO postSaveDTO);
+   // String addPost(PostSaveDTO postSaveDTO);
 //
 //   // List<PostDTO> getAllPost();
 //

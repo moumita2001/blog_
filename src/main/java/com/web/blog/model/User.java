@@ -8,12 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="User", uniqueConstraints = { @UniqueConstraint(columnNames = {  "email" }) })
+@Table(name="User", uniqueConstraints = { @UniqueConstraint(columnNames = {  "email","user_name" }) })
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name="name")
+    @Column(name="user_name")
     @NotBlank
     private String username;
     @NotBlank

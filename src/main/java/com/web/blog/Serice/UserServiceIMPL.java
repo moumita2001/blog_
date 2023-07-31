@@ -21,7 +21,7 @@ public class UserServiceIMPL implements UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
     @Override
-    public String addUser(UserDTO userDto) {
+    public Long addUser(UserDTO userDto) {
         User user = new User(
                 userDto.getId(),
                 userDto.getUsername(),
@@ -30,7 +30,7 @@ public class UserServiceIMPL implements UserService {
 
         );
         userRepo.save(user);
-        return user.getUserName();
+        return user.getId();
 
 
     }
@@ -50,7 +50,8 @@ public class UserServiceIMPL implements UserService {
             if (isPwdRight) {
                 Optional<User> employee = userRepo.findOneByUsernameAndPassword(loginDTO.getUsername(), encodedPassword);
                 if (employee.isPresent()) {
-                    return new LoginResponse("Login Success", true);
+
+                    return new LoginResponse(user1.getId()+"", true);
                 } else {
                     return new LoginResponse("Login Failed", false);
                 }

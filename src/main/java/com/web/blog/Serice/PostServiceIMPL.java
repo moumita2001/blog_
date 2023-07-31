@@ -23,18 +23,17 @@ public class PostServiceIMPL implements PostService {
 
     @Autowired
     private PostRepo postRepo;
-
-    @Override
-    public String addPost(PostSaveDTO postSaveDTO) {
-        Post post = new Post(
-                postSaveDTO.getId(),
-                postSaveDTO.getTitle(),
-                postSaveDTO.getContent(),
-                postSaveDTO.getUsername()
-        );
-        postRepo.save(post);
-        return post.getUsername();
-    }
+    //@Override
+//    public String addPost(PostSaveDTO postSaveDTO) {
+//        Post post = new Post(
+//                postSaveDTO.getId(),
+//                postSaveDTO.getTitle(),
+//                postSaveDTO.getContent(),
+//                postSaveDTO.getUsername()
+//        );
+//        postRepo.save(post);
+//        return post.getUsername();
+//    }
 ////
 ////    @Override
 ////    public List<PostDTO> getAllPost() {
@@ -50,7 +49,7 @@ public class PostServiceIMPL implements PostService {
         postDto.setId(post.getId());
         postDto.setTitle(post.getTitle());
         postDto.setContent(post.getContent());
-        postDto.setUsername(post.getUsername());
+        //postDto.setUsername(post.getUsername());
         return postDto;
     }
 

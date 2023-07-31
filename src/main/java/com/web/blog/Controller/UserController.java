@@ -13,9 +13,9 @@ public class UserController {
 @Autowired
 private UserService userService;
     @PostMapping(path ="/register")
-    public String saveUser(@RequestBody UserDTO userDto)
+    public Long saveUser(@RequestBody UserDTO userDto)
     {
-        String id = userService.addUser(userDto);
+        Long id = userService.addUser(userDto);
         return id;
     }
     @PostMapping(path = "/login")
